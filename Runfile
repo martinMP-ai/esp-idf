@@ -1,0 +1,59 @@
+#!/usr/bin/env run
+
+# ESP-IDF Runfile - Common idf.py commands wrapped for convenience
+
+# Build the project
+build:
+  idf.py build
+
+# Clean build artifacts
+clean:
+  idf.py fullclean
+
+# Flash the device
+flash:
+  idf.py flash
+
+# Monitor serial output
+monitor:
+  idf.py monitor
+
+# Build and flash
+build-flash:
+  idf.py build flash
+
+# Build, flash, and monitor
+all:
+  idf.py build flash monitor
+
+# Configure menuconfig
+menuconfig:
+  idf.py menuconfig
+
+# Set target (usage: run set-target esp32)
+set-target:
+  idf.py set-target $1
+
+# Erase flash
+erase:
+  idf.py erase-flash
+
+# Show size info
+size:
+  idf.py size
+
+# Show size components
+size-components:
+  idf.py size-components
+
+# Show size files
+size-files:
+  idf.py size-files
+
+# Reconfigure project
+reconfigure:
+  idf.py reconfigure
+
+# Install missing Python dependencies
+install-deps:
+  ./install.sh
